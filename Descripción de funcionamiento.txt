@@ -1,0 +1,12 @@
+Descripción de funcionamiento en cascada entre dos matrices
+En este proyecto se implementa la conexión en cascada de dos matrices LED (o matrices de entrada/salida), permitiendo la expansión de la cantidad de pines controlados por un microcontrolador mediante el uso de registros de desplazamiento o controladores específicos como el MAX7219.
+
+El funcionamiento en cascada implica que la salida de datos de la primera matriz se conecta a la entrada de la segunda, formando una cadena que permite controlar ambas matrices desde un solo conjunto de pines de control (DIN, CLK, CS) del microcontrolador. En este tipo de conexión:
+
+El pin de salida de datos (DOUT) de la primera matriz se conecta al pin de entrada de datos (DIN) de la segunda.
+
+Los pines de reloj (CLK) y chip select (CS) se comparten entre ambas matrices.
+
+Los datos enviados desde el microcontrolador son desplazados secuencialmente a través de las matrices en orden, de la última a la primera.
+
+Esto permite, por ejemplo, mostrar patrones o texto continuo entre las dos matrices como si fueran una sola unidad extendida. La lógica de control tiene en cuenta la dirección de desplazamiento y el orden de las matrices para lograr una visualización sincronizada.
